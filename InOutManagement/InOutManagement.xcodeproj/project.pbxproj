@@ -13,6 +13,9 @@
 		4437B85223C362C10089A998 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4437B85123C362C10089A998 /* Assets.xcassets */; };
 		4437B85523C362C10089A998 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4437B85423C362C10089A998 /* Preview Assets.xcassets */; };
 		4437B85823C362C10089A998 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4437B85623C362C10089A998 /* LaunchScreen.storyboard */; };
+		4437B86223C3A66C0089A998 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4437B86123C3A66C0089A998 /* ExternalAccessory.framework */; };
+		4437B86623C3AB770089A998 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4437B86523C3AB770089A998 /* MapKit.framework */; };
+		4437B86823C3AB830089A998 /* HomeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4437B86723C3AB830089A998 /* HomeKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,10 @@
 		4437B85423C362C10089A998 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4437B85723C362C10089A998 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4437B85923C362C10089A998 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4437B85F23C3A66C0089A998 /* InOutManagement.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InOutManagement.entitlements; sourceTree = "<group>"; };
+		4437B86123C3A66C0089A998 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		4437B86523C3AB770089A998 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4437B86723C3AB830089A998 /* HomeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HomeKit.framework; path = System/Library/Frameworks/HomeKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4437B86823C3AB830089A998 /* HomeKit.framework in Frameworks */,
+				4437B86623C3AB770089A998 /* MapKit.framework in Frameworks */,
+				4437B86223C3A66C0089A998 /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +52,7 @@
 			children = (
 				4437B84A23C362C00089A998 /* InOutManagement */,
 				4437B84923C362C00089A998 /* Products */,
+				4437B86023C3A66C0089A998 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +67,7 @@
 		4437B84A23C362C00089A998 /* InOutManagement */ = {
 			isa = PBXGroup;
 			children = (
+				4437B85F23C3A66C0089A998 /* InOutManagement.entitlements */,
 				4437B84B23C362C00089A998 /* AppDelegate.swift */,
 				4437B84D23C362C00089A998 /* SceneDelegate.swift */,
 				4437B84F23C362C00089A998 /* ContentView.swift */,
@@ -73,6 +85,16 @@
 				4437B85423C362C10089A998 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4437B86023C3A66C0089A998 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4437B86723C3AB830089A998 /* HomeKit.framework */,
+				4437B86523C3AB770089A998 /* MapKit.framework */,
+				4437B86123C3A66C0089A998 /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InOutManagement/InOutManagement.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"InOutManagement/Preview Content\"";
 				DEVELOPMENT_TEAM = 37CRZBHS68;
@@ -305,6 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InOutManagement/InOutManagement.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"InOutManagement/Preview Content\"";
 				DEVELOPMENT_TEAM = 37CRZBHS68;
