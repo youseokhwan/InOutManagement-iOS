@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SettingViewController.swift
 //  InOutManagement
 //
 //  Created by 유석환 on 2020/01/12.
@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class SettingViewController: UIViewController {
+    @IBOutlet var labelTest: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        labelTest.text = "Setting"
     }
 
-
 }
-

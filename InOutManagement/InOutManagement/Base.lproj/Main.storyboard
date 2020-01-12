@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tPR-bS-iVB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -8,20 +8,136 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--InOutManagement-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InOutManagement" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="InOutManagement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="Jzj-vH-nFO">
+                                <rect key="frame" x="67" y="128" width="280" height="153"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zvW-dK-jms">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcD-0L-DJl">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Wi-Fi"/>
+                                                <connections>
+                                                    <action selector="btnWifi:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CvX-wn-aua"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOp-Qy-tkM">
+                                                <rect key="frame" x="140" y="0.0" width="140" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="Bluetooth"/>
+                                                <connections>
+                                                    <action selector="btnBluetooth:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DBT-GV-Nrl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="mOp-Qy-tkM" firstAttribute="width" secondItem="JcD-0L-DJl" secondAttribute="width" id="YAb-el-rym"/>
+                                        </constraints>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요청 시간:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMx-3M-tlF">
+                                        <rect key="frame" x="0.0" y="74" width="280" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="8Xg-EW-Jh6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contents" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uAq-io-s1u">
+                                        <rect key="frame" x="0.0" y="132.5" width="280" height="20.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="YmX-mA-zV7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="zvW-dK-jms" firstAttribute="centerX" secondItem="Jzj-vH-nFO" secondAttribute="centerX" id="HeW-ZT-Ma3"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Jzj-vH-nFO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Oml-vE-Y6g"/>
+                            <constraint firstItem="Jzj-vH-nFO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="RxR-3w-zw2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" title="InOutManagement" id="pXU-9t-xk8">
+                        <barButtonItem key="rightBarButtonItem" title="설정" id="m6C-Pw-hNa">
+                            <connections>
+                                <segue destination="Ija-xX-CcI" kind="show" id="IGS-tu-KWf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="labelContents" destination="uAq-io-s1u" id="QZe-UF-AHX"/>
+                        <outlet property="labelRequestTime" destination="bMx-3M-tlF" id="wyi-TB-YCO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="127"/>
+            <point key="canvasLocation" x="1047.8260869565217" y="126.5625"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="fA0-IG-chi">
+            <objects>
+                <viewController id="Ija-xX-CcI" customClass="SettingViewController" customModule="InOutManagement" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bql-go-ffU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acz-N8-LAj">
+                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Acz-N8-LAj" firstAttribute="centerY" secondItem="bql-go-ffU" secondAttribute="centerY" id="1dm-fS-EVG"/>
+                            <constraint firstItem="Acz-N8-LAj" firstAttribute="centerX" secondItem="bql-go-ffU" secondAttribute="centerX" id="zZM-U2-OPV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3jd-g6-LtS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="yUK-TP-my4"/>
+                    <connections>
+                        <outlet property="labelTest" destination="Acz-N8-LAj" id="zWL-1r-sd3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="waU-vN-6W3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="127"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ih8-oc-jSi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tPR-bS-iVB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o1A-Hd-aOE">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TbA-A5-MfX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iRg-If-RSF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
     </scenes>
 </document>
