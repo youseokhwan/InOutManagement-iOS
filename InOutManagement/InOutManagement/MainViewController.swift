@@ -19,13 +19,22 @@ class MainViewController: UIViewController {
 
     // Wi-Fi 버튼을 클릭했을 때
     @IBAction func btnWifi(_ sender: UIButton) {
+        updateTime()
         labelContents.text = "Wi-Fi 버튼 클릭됨"
     }
     
     // Bluetooth 버튼을 클릭했을 때
     @IBAction func btnBluetooth(_ sender: UIButton) {
+        updateTime()
         labelContents.text = "Bluetooth 버튼 클릭됨"
     }
     
+    @objc func updateTime() {
+        let date = NSDate()
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss EEE"
+        labelRequestTime.text = "요청 시간: " + formatter.string(from: date as Date)
+    }
 }
 

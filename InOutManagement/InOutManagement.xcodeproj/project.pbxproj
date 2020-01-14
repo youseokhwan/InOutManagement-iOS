@@ -14,6 +14,7 @@
 		44AA254D23CAD5EB00B40C3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44AA254C23CAD5EB00B40C3D /* Assets.xcassets */; };
 		44AA255023CAD5EB00B40C3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AA254E23CAD5EB00B40C3D /* LaunchScreen.storyboard */; };
 		44AA255F23CAE67300B40C3D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA255E23CAE67300B40C3D /* SettingViewController.swift */; };
+		44AA256323CB2AC700B40C3D /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AA256223CB2AC700B40C3D /* ExternalAccessory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		44AA254F23CAD5EB00B40C3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		44AA255123CAD5EB00B40C3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44AA255E23CAE67300B40C3D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		44AA256023CB2AC700B40C3D /* InOutManagement.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InOutManagement.entitlements; sourceTree = "<group>"; };
+		44AA256223CB2AC700B40C3D /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44AA256323CB2AC700B40C3D /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +48,7 @@
 			children = (
 				44AA254223CAD5E900B40C3D /* InOutManagement */,
 				44AA254123CAD5E900B40C3D /* Products */,
+				44AA256123CB2AC700B40C3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +63,7 @@
 		44AA254223CAD5E900B40C3D /* InOutManagement */ = {
 			isa = PBXGroup;
 			children = (
+				44AA256023CB2AC700B40C3D /* InOutManagement.entitlements */,
 				44AA254323CAD5E900B40C3D /* AppDelegate.swift */,
 				44AA254523CAD5E900B40C3D /* SceneDelegate.swift */,
 				44AA254723CAD5E900B40C3D /* MainViewController.swift */,
@@ -68,6 +74,14 @@
 				44AA255123CAD5EB00B40C3D /* Info.plist */,
 			);
 			path = InOutManagement;
+			sourceTree = "<group>";
+		};
+		44AA256123CB2AC700B40C3D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44AA256223CB2AC700B40C3D /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +302,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InOutManagement/InOutManagement.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37CRZBHS68;
 				INFOPLIST_FILE = InOutManagement/Info.plist;
@@ -306,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InOutManagement/InOutManagement.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37CRZBHS68;
 				INFOPLIST_FILE = InOutManagement/Info.plist;
