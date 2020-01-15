@@ -15,6 +15,7 @@
 		44AA255023CAD5EB00B40C3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44AA254E23CAD5EB00B40C3D /* LaunchScreen.storyboard */; };
 		44AA255F23CAE67300B40C3D /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA255E23CAE67300B40C3D /* SettingViewController.swift */; };
 		44AA256323CB2AC700B40C3D /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44AA256223CB2AC700B40C3D /* ExternalAccessory.framework */; };
+		44E98B8A23CEED1E004247E9 /* WifiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E98B8923CEED1E004247E9 /* WifiInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		44AA255E23CAE67300B40C3D /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		44AA256023CB2AC700B40C3D /* InOutManagement.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InOutManagement.entitlements; sourceTree = "<group>"; };
 		44AA256223CB2AC700B40C3D /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		44E98B8923CEED1E004247E9 /* WifiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				44AA254C23CAD5EB00B40C3D /* Assets.xcassets */,
 				44AA254E23CAD5EB00B40C3D /* LaunchScreen.storyboard */,
 				44AA255123CAD5EB00B40C3D /* Info.plist */,
+				44E98B8923CEED1E004247E9 /* WifiInfo.swift */,
 			);
 			path = InOutManagement;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44E98B8A23CEED1E004247E9 /* WifiInfo.swift in Sources */,
 				44AA254823CAD5E900B40C3D /* MainViewController.swift in Sources */,
 				44AA254423CAD5E900B40C3D /* AppDelegate.swift in Sources */,
 				44AA254623CAD5E900B40C3D /* SceneDelegate.swift in Sources */,
