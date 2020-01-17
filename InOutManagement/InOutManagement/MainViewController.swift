@@ -13,6 +13,13 @@ import CoreLocation
 // 현재 연결된 Wi-Fi 정보
 var currentWifi:WifiInfo = WifiInfo()
 
+// 네트워크 감지
+@available(iOS 12.0, *)
+let monitor = NWPathMonitor()
+
+// 백그라운드 작업
+let queue = DispatchQueue.global(qos: .background)
+
 class MainViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     
@@ -74,8 +81,26 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     // Wi-Fi 감지 시작
+    // 알림 기능 구현 후 네트워크 변경 작업이 백그라운드에서도 잘 동작하는지 확인하기
     func startWifiDetection() {
-        print("Wi-Fi 감지 시작")
+        if #available(iOS 12.0, *) {
+            monitor.pathUpdateHandler = { path in
+                if path.status == .satisfied {
+                    if path.usesInterfaceType(.wifi) {
+                        print("Wi-Fi에 연결")
+                    } else if path.usesInterfaceType(.cellular) {
+                        print("셀룰러 데이터에 연결")
+                    } else {
+                        print("기타 네트워크에 연결")
+                    }
+                } else {
+                    print("인터넷에 연결되지 않은 상태")
+                }
+            }
+            monitor.start(queue: queue)
+        } else {
+            print("iOS 12 미만입니다.")
+        }
     }
 }
 
