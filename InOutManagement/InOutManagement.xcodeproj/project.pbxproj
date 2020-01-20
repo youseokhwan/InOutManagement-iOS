@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4469552123D5B6FB00C11EF4 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4469552023D5B6FB00C11EF4 /* CustomCell.swift */; };
 		44AA254423CAD5E900B40C3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA254323CAD5E900B40C3D /* AppDelegate.swift */; };
 		44AA254623CAD5E900B40C3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA254523CAD5E900B40C3D /* SceneDelegate.swift */; };
 		44AA254823CAD5E900B40C3D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44AA254723CAD5E900B40C3D /* MainViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4469552023D5B6FB00C11EF4 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		44AA254023CAD5E900B40C3D /* InOutManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InOutManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AA254323CAD5E900B40C3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44AA254523CAD5E900B40C3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				44AA254523CAD5E900B40C3D /* SceneDelegate.swift */,
 				44AA254723CAD5E900B40C3D /* MainViewController.swift */,
 				44AA255E23CAE67300B40C3D /* SettingViewController.swift */,
+				4469552023D5B6FB00C11EF4 /* CustomCell.swift */,
 				44AA254923CAD5E900B40C3D /* Main.storyboard */,
 				44AA254C23CAD5EB00B40C3D /* Assets.xcassets */,
 				44AA254E23CAD5EB00B40C3D /* LaunchScreen.storyboard */,
@@ -162,6 +165,7 @@
 				44AA254823CAD5E900B40C3D /* MainViewController.swift in Sources */,
 				44AA254423CAD5E900B40C3D /* AppDelegate.swift in Sources */,
 				44AA254623CAD5E900B40C3D /* SceneDelegate.swift in Sources */,
+				4469552123D5B6FB00C11EF4 /* CustomCell.swift in Sources */,
 				44AA255F23CAE67300B40C3D /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

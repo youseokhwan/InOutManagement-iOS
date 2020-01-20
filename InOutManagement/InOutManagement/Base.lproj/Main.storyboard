@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tPR-bS-iVB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tPR-bS-iVB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -98,28 +98,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acz-N8-LAj">
-                                <rect key="frame" x="186" y="437.5" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 Wi-Fi:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tnx-bm-lcE">
+                                <rect key="frame" x="67" y="128" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="fO9-ml-LJE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pUm-Dq-oIh">
+                                <rect key="frame" x="67" y="189" width="280" height="633"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="WMK-9m-ehf"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="customcell" id="q4q-ue-96y" customClass="CustomCell" customModule="InOutManagement" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="280" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q4q-ue-96y" id="A3C-Qo-jSY">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wi-Fi SSID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1W-H0-ojK">
+                                                    <rect key="frame" x="16" y="11" width="200" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvj-mS-zvW">
+                                                    <rect key="frame" x="234" y="7" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="삭제"/>
+                                                    <connections>
+                                                        <action selector="buttonRemove:" destination="q4q-ue-96y" eventType="touchUpInside" id="nB2-jP-SJh"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="labelSsid" destination="h1W-H0-ojK" id="10T-xN-FrC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Acz-N8-LAj" firstAttribute="centerY" secondItem="bql-go-ffU" secondAttribute="centerY" id="1dm-fS-EVG"/>
-                            <constraint firstItem="Acz-N8-LAj" firstAttribute="centerX" secondItem="bql-go-ffU" secondAttribute="centerX" id="zZM-U2-OPV"/>
+                            <constraint firstItem="pUm-Dq-oIh" firstAttribute="centerX" secondItem="bql-go-ffU" secondAttribute="centerX" id="6Ih-Dk-R0W"/>
+                            <constraint firstItem="pUm-Dq-oIh" firstAttribute="top" secondItem="Tnx-bm-lcE" secondAttribute="bottom" constant="40" id="Iti-DP-nPl"/>
+                            <constraint firstItem="3jd-g6-LtS" firstAttribute="bottom" secondItem="pUm-Dq-oIh" secondAttribute="bottom" constant="40" id="k0w-s1-e0h"/>
+                            <constraint firstItem="Tnx-bm-lcE" firstAttribute="centerX" secondItem="bql-go-ffU" secondAttribute="centerX" id="oYl-rO-gso"/>
+                            <constraint firstItem="Tnx-bm-lcE" firstAttribute="top" secondItem="3jd-g6-LtS" secondAttribute="top" constant="40" id="rLU-dg-AT1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3jd-g6-LtS"/>
                     </view>
                     <navigationItem key="navigationItem" id="yUK-TP-my4"/>
                     <connections>
-                        <outlet property="labelTest" destination="Acz-N8-LAj" id="zWL-1r-sd3"/>
+                        <outlet property="labelCurrentWifiSsid" destination="Tnx-bm-lcE" id="JgN-TQ-mGE"/>
+                        <outlet property="tableViewHomeWifiList" destination="pUm-Dq-oIh" id="0vF-Hf-DBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="waU-vN-6W3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="127"/>
+            <point key="canvasLocation" x="1960.8695652173915" y="126.5625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ih8-oc-jSi">

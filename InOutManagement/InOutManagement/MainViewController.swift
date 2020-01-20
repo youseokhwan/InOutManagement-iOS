@@ -18,7 +18,7 @@ var currentWifi:WifiInfo = WifiInfo()
 @available(iOS 12.0, *)
 let monitor = NWPathMonitor()
 
-// 백그라운드 작업
+// 백그라운드 작업 Queue
 let queue = DispatchQueue.global(qos: .background)
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
@@ -28,7 +28,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UNUserNot
     @IBOutlet var labelRequestTime: UILabel!
     @IBOutlet var labelContents: UILabel!
     
-    // Main View가 로드된 직후 실행
+    // MainView 로드 후 실행
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,11 +38,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UNUserNot
             let status = CLLocationManager.authorizationStatus()
             
             if status == .authorizedAlways {
+                print("Always")
                 startWifiDetection()
             } else if status == .authorizedWhenInUse {
+                print("While Using the App")
                 locationManager.delegate = self
                 locationManager.requestAlwaysAuthorization()
             } else {
+                print("Never or Ask Next Time")
                 locationManager.delegate = self
                 locationManager.requestWhenInUseAuthorization()
             }
@@ -53,7 +56,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UNUserNot
         // 알림권한 확인 및 요청
         userNotificationCenter.delegate = self
         requestNotificationAuthorization()
-        sendNotification(title: "알림", body: "네트워크 감지를 시작합니다.")
     }
 
     // Wi-Fi 버튼을 클릭했을 때
@@ -81,8 +83,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UNUserNot
     // 위치권한 변경에 대한 작업
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways {
+            print("Always")
             startWifiDetection()
         } else if status == .authorizedWhenInUse {
+            print("While Using the App")
             locationManager.requestAlwaysAuthorization()
         }
     }
@@ -125,7 +129,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UNUserNot
     
     // Wi-Fi 감지 시작
     // issue: 백그라운드에서 제대로 동작하지 않는 상태
-    // issue: 네트워크 변경 시 알림이 여러번 발생하는 현상 해결해야 함
+    // issue: 네트워크 변경 시 알림이 여러 번 발생하는 현상 해결해야 함
     // issue: 알림에 소리/진동이 발생하지 않음
     func startWifiDetection() {
         if #available(iOS 12.0, *) {
@@ -133,7 +137,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UNUserNot
                 if path.status == .satisfied {
                     if path.usesInterfaceType(.wifi) {
                         print("Wi-Fi에 연결")
-                        self.sendNotification(title: "네트워크 알림", body: "Wi-Fi에 연결되었습니다.")
+                        currentWifi.updateWifiInformation()
+                        self.sendNotification(title: "네트워크 알림", body: "Wi-Fi(" + currentWifi.ssid + ")에 연결되었습니다.")
                     } else if path.usesInterfaceType(.cellular) {
                         print("셀룰러 데이터에 연결")
                         self.sendNotification(title: "네트워크 알림", body: "셀룰러 데이터에 연결되었습니다.")

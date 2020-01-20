@@ -44,6 +44,12 @@ class WifiInfo {
         self._bssid = "bssid"
     }
     
+    // 생성자
+    init(newSsid: String, newBssid: String) {
+        self._ssid = newSsid
+        self._bssid = newBssid
+    }
+    
     // Wi-Fi 정보 업데이트
     func updateWifiInformation() {
         var newSsid: String?
