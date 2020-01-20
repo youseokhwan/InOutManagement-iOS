@@ -24,14 +24,15 @@ class CustomCell: UITableViewCell {
     }
     
     // 삭제 버튼 클릭 시 해당 셀 삭제
+    // issue: 삭제는 되는데 바로 애니메이션으로 반영되지 않음
     @IBAction func buttonRemove(_ sender: UIButton) {
-//        print("bssid: " + self.bssid)
-//
-//        for i in 0 ..< homeWifiList.count {
-//            if self.bssid == homeWifiList[i].bssid {
-//                homeWifiList.remove(at: i)
-//                break
-//            }
-//        }
+        print("bssid: " + self.bssid)
+
+        for i in 0 ..< homeWifiList.count {
+            if self.bssid == homeWifiList[i].bssid {
+                homeWifiList.remove(at: i)
+                break
+            }
+        }
     }
 }
